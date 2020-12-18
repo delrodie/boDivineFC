@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Newsletter;
+use App\Form\NewsletterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -13,8 +16,40 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('home/index.html.twig', [
+        /*return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
+        ]);*/
+        return $this->redirectToRoute('app_maintenance');
+    }
+
+    /**
+     * @Route("/maintenance", name="app_maintenance", methods={"GET","POST"})
+     */
+    public function maintenance(Request $request)
+    {
+        $newsletter = new Newsletter();
+        $form = $this->createForm(NewsletterType::class, $newsletter);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $verif = $this->getDoctrine()->getRepository(Newsletter::class)->findOneBy(['email'=>$newsletter->getEmail()]);
+            if ($verif){
+                $this->addFlash('danger', "Echec vous êtes déjà inscrit");
+                return $this->redirectToRoute('app_home');
+            }
+
+            $entityManager->persist($newsletter);
+            $entityManager->flush();
+
+            $this->addFlash('success', "Votre email a bien été enregistré");
+
+            return $this->redirectToRoute('app_home');
+        }
+
+        return $this->render('home/maintenance.html.twig', [
+            'newsletter' => $newsletter,
+            'form' => $form->createView(),
         ]);
     }
 }

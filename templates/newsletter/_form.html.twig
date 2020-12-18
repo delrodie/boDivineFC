@@ -1,0 +1,9 @@
+{{ form_start(form,{'attr':{'class': "gdlr-core-newsletter-form clearfix"}}) }}
+    <div class="gdlr-core-newsletter-email">
+        {{ form_widget(form.email) }}
+    </div>
+    {{ form_widget(form) }}
+    <div class="gdlr-core-newsletter-submit">
+        <input class="newsletter-submit" type="submit" value="S'inscrire">
+    </div>
+{{ form_end(form) }}
