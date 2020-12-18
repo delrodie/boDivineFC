@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} :: Maintenance{% endblock %}
+
+{% block body %}
+    <div class="financity-body-outer-wrapper  financity-header-disable">
+        <div class="financity-body-wrapper clearfix  financity-with-transparent-navigation financity-with-frame">
+            <div class="financity-page-wrapper" id="financity-page-wrapper">
+                <div class="gdlr-core-page-builder-body">
+                    <div class="gdlr-core-pbf-wrapper  gdlr-core-wrapper-full-height gdlr-core-js gdlr-core-full-height-center" style="padding: 120px 0px 120px 0px;" data-skin="White Text">
+                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #2e3044 ;">
+                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="opacity: 0.2;background-image: url(assets/images/02.jpg);background-size: cover;background-position: center;" data-parallax-speed="0"></div>
+                        </div>
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js  gdlr-core-full-height-content" data-gdlr-animation="fadeIn" data-gdlr-animation-duration="600ms" data-gdlr-animation-offset="0.8">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                                <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js " style="max-width: 700px;">
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 15px;">
+                                                    <div class="gdlr-core-title-item-title-wrap  gdlr-core-js-2 gdlr-core-with-divider">
+                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 40px;font-weight: 300;letter-spacing: 0px;text-transform: none;margin-left: 30px;margin-right: 30px;">Divine Finances Conseils SA<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span></h3>
+                                                        <div class="gdlr-core-title-item-divider gdlr-core-left gdlr-core-skin-divider" style="border-color: #ffffff;"></div>
+                                                        <div class="gdlr-core-title-item-divider gdlr-core-right gdlr-core-skin-divider" style="border-color: #ffffff;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 50px;">
+                                                    <div class="gdlr-core-title-item-title-wrap ">
+                                                        <img src="{{ absolute_url(asset('assets/images/logodivine_bw.png')) }}" alt="" width="300px">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-countdown-item gdlr-core-item-pdlr gdlr-core-item-pdb " style="padding-bottom: 25px;">
+                                        <div class="gdlr-core-countdown-wrap gdlr-core-js  gdlr-core-center-align">
+                                            <span style="font-size: 5rem;">... site en construction</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" data-skin="Purple Button">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js " style="max-width: 650px;">
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-divider-item-normal" style="padding-bottom: 33px;">
+                                                    <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-bottom-width: 3px;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align">
+                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 18px;">
+                                                        <p>Veuillez vous abonner à la newsletter pour recevoir nos informations.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-newsletter-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-style-rectangle" style="padding-bottom: 0px;">
+
+                                                    <div class="newsletter newsletter-subscription">
+                                                        <form class="gdlr-core-newsletter-form clearfix" method="post" action="">
+                                                            <div class="gdlr-core-newsletter-email">
+                                                                <input class="newsletter-email gdlr-core-skin-e-background gdlr-core-skin-e-content" placeholder="Votre adresse mail" type="email" name="adresse" size="30" required="true  ">
+                                                            </div>
+                                                            <div class="gdlr-core-newsletter-submit">
+                                                                <input class="newsletter-submit" type="submit" value="S'inscrire">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
