@@ -1,9 +1,22 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Divine Finances Conseils SA :: Maintenance{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel='stylesheet' href='{{ absolute_url(asset('assets/plugins/revslider/public/assets/css/settings.css')) }}' type='text/css' media='all'>
+        <link rel='stylesheet' href='{{ absolute_url(asset('assets/css/style-core.css')) }}' type='text/css' media='all'>
+        <link rel='stylesheet' href='{{ absolute_url(asset('assets/css/financity-style-custom.css')) }}' type='text/css' media='all'>
+        <link rel='stylesheet' href='{{ absolute_url(asset('assets/plugins/goodlayers-core/plugins/combine/style.css')) }}' type='text/css' media='all'>
+        <link rel='stylesheet' href='{{ absolute_url(asset('assets/plugins/goodlayers-core/include/css/page-builder.css')) }}' type='text/css' media='all'>
 
-{% block title %}{{parent()}} :: Maintenance{% endblock %}
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7COpen+Sans%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%7CAsap%3Aregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic&amp;subset=latin-ext%2Clatin%2Cvietnamese%2Ccyrillic-ext%2Cgreek%2Cgreek-ext%2Ccyrillic&amp;ver=4.9.5' type='text/css' media='all'>
+    {% endblock %}
+</head>
+<body class="page-template-default page page-id-2023 gdlr-core-body financity-body financity-body-front financity-full  financity-with-sticky-navigation gdlr-core-link-to-lightbox">
 
-{% block body %}
-    <div class="financity-body-outer-wrapper  financity-header-disable">
+<div class="financity-body-outer-wrapper  financity-header-disable">
         <div class="financity-body-wrapper clearfix  financity-with-transparent-navigation financity-with-frame">
             <div class="financity-page-wrapper" id="financity-page-wrapper">
                 <div class="gdlr-core-page-builder-body">
@@ -92,4 +105,23 @@
             </div>
         </div>
     </div>
+{% block javascripts %}
+    <script type='text/javascript' src='{{ absolute_url(asset('assets/js/jquery/jquery.js')) }}'></script>
+    <script type='text/javascript' src='{{ absolute_url(asset('assets/js/jquery/jquery-migrate.min.js')) }}'></script>
+    <script type='text/javascript' src='{{ absolute_url(asset('assets/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js')) }}'></script>
+    <script type='text/javascript' src='{{ absolute_url(asset('assets/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js')) }}'></script>
+
+    <script type='text/javascript' src='{{ absolute_url(asset('assets/js/jquery/ui/effect.min.js')) }}'></script>
+
+    <script type='text/javascript' src='{{ absolute_url(asset('assets/js/script-core.js')) }}'></script>
+
+    <script type='text/javascript' src='{{ absolute_url(asset('assets/plugins/goodlayers-core/plugins/combine/script.js')) }}'></script>
+    <script type='text/javascript'>
+        var gdlr_core_pbf = {};
+    </script>
+    <script type='text/javascript' src='{{ absolute_url(asset('assets/plugins/goodlayers-core/include/js/page-builder.js')) }}'></script>
+
 {% endblock %}
+</body>
+</html>
+

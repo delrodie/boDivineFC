@@ -13,9 +13,182 @@
 
             <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7COpen+Sans%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%7CAsap%3Aregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic&amp;subset=latin-ext%2Clatin%2Cvietnamese%2Ccyrillic-ext%2Cgreek%2Cgreek-ext%2Ccyrillic&amp;ver=4.9.5' type='text/css' media='all'>
         {% endblock %}
+        <script src="{{ absolute_url(asset('assets/js/date.js')) }}"></script>
     </head>
     <body class="page-template-default page page-id-2023 gdlr-core-body financity-body financity-body-front financity-full  financity-with-sticky-navigation gdlr-core-link-to-lightbox">
-        {% block body %}{% endblock %}
+        <div class="financity-mobile-header-wrap">
+            <div class="financity-mobile-header financity-header-background financity-style-slide" id="financity-mobile-header">
+                <div class="financity-mobile-header-container financity-container">
+                    <div class="financity-logo  financity-item-pdlr">
+                        <div class="financity-logo-inner">
+                            <a href="#"><img src="{{ absolute_url(asset('assets/images/logodivine_bw.png')) }}" alt="" width="211" height="48"></a>
+                        </div>
+                    </div>
+                    <div class="financity-mobile-menu-right">
+
+                        <div class="financity-mobile-menu"><a class="financity-mm-menu-button financity-mobile-menu-button financity-mobile-button-hamburger" href="#financity-mobile-menu"><span></span></a>
+                            <div class="financity-mm-menu-wrap financity-navigation-font" id="financity-mobile-menu" data-slide="right">
+                                <ul id="menu-main-navigation" class="m-menu">
+                                    <li class="menu-item menu-item-home current-menu-item page_item page-item-2039 current_page_item"><a href="#">Accueil</a></li>
+                                    <li class="menu-item menu-item-has-children"><a href="#">Qui sommes-nous?</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item"><a href="#">Présentation</a></li>
+                                            <li class="menu-item"><a href="#">Notre équipe</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children"><a href="#">Nos Services</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item"><a href="#">Service 1</a></li>
+                                            <li class="menu-item"><a href="#">Service 2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children"><a href="#">Actualités</a></li>
+                                    <li class="menu-item menu-item-has-children"><a href="#">Blog</a></li>
+                                    <li class="menu-item menu-item-has-children"><a href="#">Contact</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="financity-body-outer-wrapper ">
+            <div class="financity-body-wrapper clearfix  financity-with-transparent-header financity-with-frame">
+                <div class="financity-header-background-transparent">
+                    <div class="financity-top-bar">
+                        <div class="financity-top-bar-background"></div>
+                        <div class="financity-top-bar-container clearfix financity-container ">
+                            <div class="financity-top-bar-left financity-item-pdlr">
+                            <span class="gdlr-core-dropdown-tab gdlr-core-js clearfix">
+                            <span class="gdlr-core-dropdown-tab-content-wrap">
+                                <span class="gdlr-core-dropdown-tab-content gdlr-core-active" data-index="0">
+                                    <i class="fa fa-clock-o" style="font-size: 17px;color: #a5bfff;margin-right: 10px;"></i> <strong><span id="date_heure"></span></strong>
+                                    <i class="fa fa-phone" style="font-size: 17px;color: #a5bfff;margin-left: 20px;margin-right: 10px;"></i><strong>+225 00 00 00 00</strong>
+                                    <script type="text/javascript">window.onload = date_heure('date_heure');</script>
+                                </span>
+                            </span>
+                            </span>
+                                </span>
+                            </div>
+                            <div class="financity-top-bar-right financity-item-pdlr">
+                                <div class="financity-top-bar-right-text">
+                                    <i class="fa fa-envelope-open-o" style="font-size: 17px;color: #a5bfff;margin-left: 20px;margin-right: 14px;"></i><strong>infos@divinefinancesci.com</strong>
+                                </div>
+                                <span class="financity-top-bar-divider financity-left-margin"></span>
+                                <div class="financity-top-bar-right-social">
+                                    <a href="#" target="_blank" class="financity-top-bar-social-icon" title="facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" target="_blank" class="financity-top-bar-social-icon" title="twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" target="_blank" class="financity-top-bar-social-icon" title="instagram"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <header class="financity-header-wrap financity-header-style-plain  financity-style-menu-right financity-sticky-navigation financity-style-slide" data-navigation-offset="75px">
+                        <div class="financity-header-background"></div>
+                        <div class="financity-header-container  financity-container">
+                            <div class="financity-header-container-inner clearfix">
+                                <div class="financity-logo  financity-item-pdlr">
+                                    <div class="financity-logo-inner">
+                                        <a href="#"><img src="{{ absolute_url(asset('assets/images/logodivine_bw.png')) }}" alt="" width="130"></a>
+                                    </div>
+                                </div>
+                                <div class="financity-navigation financity-item-pdlr clearfix ">
+                                    <div class="financity-main-menu" id="financity-main-menu">
+                                        <ul id="menu-main-navigation-1" class="sf-menu">
+                                            <li class="menu-item menu-item-home current-menu-item page_item page-item-2039 current_page_item financity-normal-menu"><a href="index.html"><i class="fa fa-home"></i>Accueil</a></li>
+                                            <li class="menu-item menu-item-has-children financity-normal-menu"><a href="#" class="sf-with-ul-pre">Qui sommes-nous?</a>
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item" data-size="60"><a href="#">Présentation</a></li>
+                                                    <li class="menu-item" data-size="60"><a href="#">Notre équipe</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item menu-item-has-children financity-normal-menu"><a href="services.html" class="sf-with-ul-pre">Nos Services</a>
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item" data-size="60"><a href="#">Service 1</a></li>
+                                                    <li class="menu-item" data-size="60"><a href="#">Service 2</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item menu-item-has-children financity-normal-menu"><a href="portfolio-3-columns.html" class="sf-with-ul-pre">Actualités</a>
+                                            </li>
+                                            <li class="menu-item menu-item-has-children financity-normal-menu"><a href="#" class="sf-with-ul-pre">Blog</a>
+                                            </li>
+                                            <li class="menu-item menu-item-has-children financity-normal-menu"><a href="#" class="sf-with-ul-pre">Contact</a></li>
+                                        </ul>
+                                        <div class="financity-navigation-slide-bar" id="financity-navigation-slide-bar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                {% block body %}{% endblock %}
+                <footer>
+                    <div class="financity-footer-wrapper ">
+                        <div class="financity-footer-container financity-container clearfix">
+                            <div class="financity-footer-column financity-item-pdlr financity-column-15">
+                                <div id="text-2" class="widget widget_text financity-widget">
+                                    <div class="textwidget">
+                                        <p><img src="{{ absolute_url(asset('assets/images/logodivine_bw.png')) }}" alt=""></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="financity-footer-column financity-item-pdlr financity-column-15">
+                                <div id="nav_menu-1" class="widget widget_nav_menu financity-widget">
+                                    <h3 class="financity-widget-title">Rubriques</h3>
+                                    <div class="menu-useful-links-container">
+                                        <ul id="menu-useful-links" class="menu">
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5507"><a href="#">Présentation</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5506"><a href="#">Notre équipe</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5512"><a href="#">Nore metier</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5508"><a href="#">Vision</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="financity-footer-column financity-item-pdlr financity-column-15">
+                                <div id="nav_menu-1" class="widget widget_nav_menu financity-widget">
+                                    <h3 class="financity-widget-title">Rubriques</h3>
+                                    <div class="menu-useful-links-container">
+                                        <ul id="menu-useful-links" class="menu">
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5507"><a href="#">Services</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5506"><a href="#">Actualités</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5512"><a href="#">Blog</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5508"><a href="#">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="financity-footer-column financity-item-pdlr financity-column-15">
+                                <div id="text-2" class="widget widget_text financity-widget">
+                                    <div class="textwidget">
+                                        <p></p>
+                                        <p><i class="fa fa-location-arrow" style="font-size: 16px;color: #ffffff;margin-right: 10px;"></i>Cocody Abidjan Côte d'Ivoire
+                                            <br> <span class="gdlr-core-space-shortcode" style="margin-top: 10px;"></span> <i class="fa fa-phone" style="font-size: 16px;color: #ffffff;margin-right: 10px;"></i> +225 00 00 00 00
+                                            <br> <span class="gdlr-core-space-shortcode" style="margin-top: 10px;"></span> <i class="fa fa-envelope-open-o" style="font-size: 16px;color: #ffffff;margin-right: 10px;"></i> infos@divinefinncesci.com
+                                            <br> <span class="gdlr-core-space-shortcode" style="margin-top: 10px;"></span> <i class="fa fa-clock-o" style="font-size: 16px;color: #ffffff;margin-right: 10px;"></i> Lun-ven : 08H-17h</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="financity-copyright-wrapper">
+                        <div class="financity-copyright-container financity-container clearfix">
+                            <div class="financity-copyright-left financity-item-pdlr">
+                                &copy; Copyright 2021, <a href="{{ absolute_url(path('app_home')) }}">Divine Finances Conseils SA</a> |
+                                Tous droits réservés
+                            </div>
+                            <div class="financity-copyright-right financity-item-pdlr">
+                                <a href="#" target="_self"><i class="fa fa-facebook" style="font-size: 16px;color: #ffffff;margin-left: 17px;"></i></a>
+                                <a href="#" target="_self"><i class="fa fa-twitter" style="font-size: 16px;color: #ffffff;margin-left: 17px;"></i></a>
+                                <a href="#" target="_self"><i class="fa fa-linkedin" style="font-size: 16px;color: #ffffff;margin-left: 17px;"></i></a>
+                                <a href="#" target="_self"><i class="fa fa-instagram" style="font-size: 16px;color: #ffffff;margin-left: 17px;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
         {% block javascripts %}
             <script type='text/javascript' src='{{ absolute_url(asset('assets/js/jquery/jquery.js')) }}'></script>
             <script type='text/javascript' src='{{ absolute_url(asset('assets/js/jquery/jquery-migrate.min.js')) }}'></script>
