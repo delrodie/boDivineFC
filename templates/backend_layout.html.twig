@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}Backoffice ::{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/lib/@fortawesome/fontawesome-free/css/all.min.css')) }}">
+            <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/lib/ionicons/css/ionicons.min.css')) }}">
+        {% endblock %}
+        <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/assets/css/cassie.css')) }}">
+        <style>
+            .sidebar-logo, .sidebar-logo:hover, .sidebar-logo:focus {
+                color: #17468f; }
+        </style>
+
+    </head>
+    <body data-spy="scroll" >
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div>
+                    <a href="{{ path('app_dashboard') }}" class="sidebar-logo"><span>BACKOFFICE</span></a>
+                    <small class="sidebar-logo-headline">Divine Finances Conseils</small>
+                </div>
+            </div>
+            <div id="dpSidebarBody" class="sidebar-body">
+                <ul class="nav nav-sidebar">
+                    <li class="nav-label"><label class="content-label">Rubriques</label></li>
+                    <li class="nav-item {% if menu == 'dashboard' %}show{% endif %}">
+                        <a href="#" class="nav-link with-sub"><i data-feather="box"></i> Tableau de bord</a>
+                        <nav class="nav nav-sub">
+                            <a href="#" class="nav-sub-link">Google Analytics</a>
+                            <a href="{{ path('app_dashboard') }}" class="nav-sub-link {% if sub_menu == 'backend' %}active{% endif %}">Statistiques</a>
+                        </nav>
+                    </li>
+                    <li class="nav-item {% if menu == 'accueil' %}show{% endif %}">
+                        <a href="#" class="nav-link with-sub {% if menu == 'accueil' %}active{% endif %}"><i data-feather="layout"></i> Accueil</a>
+                        <nav class="nav nav-sub">
+                            <a href="#" class="nav-sub-link {% if sub_menu == 'slide' %}active{% endif %}">Slide</a>
+                            <a href="#" class="nav-sub-link {% if sub_menu == 'president' %}active{% endif %}">Services</a>
+                            <a href="#" class="nav-sub-link {% if sub_menu == 'agenda' %}active{% endif %}">Vision</a>
+                        </nav>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link with-sub"><i data-feather="layout"></i> Qui sommes-nous?</a>
+                        <nav class="nav nav-sub">
+                            <a href="#" class="nav-sub-link">Présentation</a>
+                            <a href="#" class="nav-sub-link">Notre equipe</a>
+                        </nav>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link with-sub"><i data-feather="lock"></i> Services</a>
+                        <nav class="nav nav-sub">
+                            <a href="#" class="nav-sub-link">Service 1</a>
+                            <a href="#" class="nav-sub-link">Service 2</a>
+                        </nav>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i data-feather="aperture"></i> Actualités</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i data-feather="aperture"></i> Blog</a></li>
+                </ul>
+
+                <hr class="mg-t-30 mg-b-25">
+
+                <ul class="nav nav-sidebar">
+                    <li class="nav-item {% if menu == 'admin' %}show{% endif %}">
+                        <a href="#" class="nav-link with-sub {% if menu == 'admin' %}active{% endif %}"><i data-feather="layers"></i> Administration</a>
+                        <nav class="nav nav-sub">
+                            <a href="#" class="nav-sub-link {% if sub_menu == 'user' %} active{% endif %}">Utilisateur</a>
+                            <a href="#" class="nav-sub-link">Newsletter</a>
+                        </nav>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i data-feather="aperture"></i> Themes</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i data-feather="help-circle"></i> Documentation</a></li>
+                </ul>
+
+
+            </div>
+        </div>
+        <div class="content content-page">
+            <div class="header">
+                <div class="header-left">
+                    <a href="#" class="burger-menu"><i data-feather="menu"></i></a>
+
+                    <div class="header-search">
+                        <i data-feather="search"></i>
+                        <input type="search" class="form-control" placeholder="Recherche">
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <a href="#" class="header-help-link"><i data-feather="help-circle"></i></a>
+                    <div class="dropdown dropdown-loggeduser">
+                        <a href="#" class="dropdown-link" data-toggle="dropdown">
+                            <div class="avatar avatar-sm">
+                                <img src="{{ absolute_url(asset('backoffice/assets/img/avatar.png')) }}" class="rounded-circle" alt="">
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-menu-header">
+                                <div class="media align-items-center">
+                                    <div class="avatar">
+                                        <img src="{{ absolute_url(asset('backoffice/assets/img/avatar.png')) }}" class="rounded-circle" alt="">
+                                    </div><!-- avatar -->
+                                    <div class="media-body mg-l-10">
+                                        <h6>User</h6>
+                                        <span>
+                                            Role
+                                        </span>
+                                    </div>
+                                </div><!-- media -->
+                            </div>
+                            <div class="dropdown-menu-body">
+                                <a href="#" class="dropdown-item"><i data-feather="user"></i> Activités</a>
+                                <a href="#" class="dropdown-item"><i data-feather="edit-2"></i> Compte</a>
+                                <a href="#" class="dropdown-item"><i data-feather="briefcase"></i> Mot de passe</a>
+                                <a href="#" class="dropdown-item"><i data-feather="log-out"></i> Déconnexion</a>
+                            </div>
+                        </div><!-- dropdown-menu -->
+                    </div>
+                </div><!-- header-right -->
+            </div>
+            <div class="content-header justify-content-between">
+                <div>
+
+
+                </div>
+            </div>
+            <div class="content-right content-right-components">
+                {% block aide %}{% endblock %}
+            </div>
+            <div class="content-body content-body-components">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+
+
+        {% block javascripts %}
+            <script src="{{ absolute_url(asset('backoffice/lib/jquery/jquery.min.js')) }}"></script>
+            <script src="{{ absolute_url(asset('backoffice/lib/jqueryui/jquery-ui.min.js')) }}"></script>
+            <script src="{{ absolute_url(asset('backoffice/lib/bootstrap/js/bootstrap.bundle.min.js')) }}"></script>
+            <script src="{{ absolute_url(asset('backoffice/lib/feather-icons/feather.min.js')) }}"></script>
+            <script src="{{ absolute_url(asset('backoffice/lib/perfect-scrollbar/perfect-scrollbar.min.js')) }}"></script>
+            <script src="{{ absolute_url(asset('backoffice/lib/js-cookie/js.cookie.js')) }}"></script>
+            <script src="{{ absolute_url(asset('backoffice/assets/js/cassie.js')) }}"></script>
+        {% endblock %}
+    </body>
+</html>
