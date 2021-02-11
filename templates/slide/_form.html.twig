@@ -1,0 +1,44 @@
+{{ form_start(form) }}
+<div class="row row-sm mb-3">
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-12">{{ form_row(form.titre) }}</div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12">{{ form_row(form.sousTitre) }}</div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12">{{ form_row(form.description) }}</div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-12">
+                <img class="preview img-thumbnail" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <label for="">Télécharger la photo</label>
+                <div class="custom-file">
+                    {{ form_widget(form.media) }}
+                    <label for="slide_media" class="custom-file-label">Telecharger la photo</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row row-sm">
+    <div class="col-sm-6">
+        <div class="custom-control custom-checkbox">
+            {{ form_widget(form.statut) }}
+            <label class="custom-control-label" for="slide_statut">Statut</label>
+        </div>
+    </div>
+</div>
+{{ form_widget(form) }}
+<div class="text-center mt-5">
+    <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+</div>
+
+{{ form_end(form) }}

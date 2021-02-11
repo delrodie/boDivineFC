@@ -36,7 +36,7 @@
                     <li class="nav-item {% if menu == 'accueil' %}show{% endif %}">
                         <a href="#" class="nav-link with-sub {% if menu == 'accueil' %}active{% endif %}"><i data-feather="layout"></i> Accueil</a>
                         <nav class="nav nav-sub">
-                            <a href="#" class="nav-sub-link {% if sub_menu == 'slide' %}active{% endif %}">Slide</a>
+                            <a href="{{ path('backend_slide_index') }}" class="nav-sub-link {% if sub_menu == 'slide' %}active{% endif %}">Slide</a>
                             <a href="#" class="nav-sub-link {% if sub_menu == 'president' %}active{% endif %}">Services</a>
                             <a href="#" class="nav-sub-link {% if sub_menu == 'agenda' %}active{% endif %}">Vision</a>
                         </nav>
