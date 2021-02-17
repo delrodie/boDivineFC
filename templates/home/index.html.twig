@@ -1,86 +1,258 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{parent()}} :: Maintenance{% endblock %}
+{% block title %}Divines Finances Conseils{% endblock %}
 
 {% block body %}
-    <div class="financity-body-outer-wrapper  financity-header-disable">
-        <div class="financity-body-wrapper clearfix  financity-with-transparent-navigation financity-with-frame">
-            <div class="financity-page-wrapper" id="financity-page-wrapper">
-                <div class="gdlr-core-page-builder-body">
-                    <div class="gdlr-core-pbf-wrapper  gdlr-core-wrapper-full-height gdlr-core-js gdlr-core-full-height-center" style="padding: 120px 0px 120px 0px;" data-skin="White Text">
-                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #2e3044 ;">
-                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="opacity: 0.2;background-image: url(assets/images/02.jpg);background-size: cover;background-position: center;" data-parallax-speed="0"></div>
-                        </div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js  gdlr-core-full-height-content" data-gdlr-animation="fadeIn" data-gdlr-animation-duration="600ms" data-gdlr-animation-offset="0.8">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js " style="max-width: 700px;">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 15px;">
-                                                    <div class="gdlr-core-title-item-title-wrap  gdlr-core-js-2 gdlr-core-with-divider">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 40px;font-weight: 300;letter-spacing: 0px;text-transform: none;margin-left: 30px;margin-right: 30px;">Divine Finances Conseils SA<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span></h3>
-                                                        <div class="gdlr-core-title-item-divider gdlr-core-left gdlr-core-skin-divider" style="border-color: #ffffff;"></div>
-                                                        <div class="gdlr-core-title-item-divider gdlr-core-right gdlr-core-skin-divider" style="border-color: #ffffff;"></div>
+    <div class="financity-page-wrapper" id="financity-page-wrapper">
+        <div class="gdlr-core-page-builder-body">
+            <div class="gdlr-core-pbf-wrapper " style="padding: 58px 0px 0px 0px;" id="gdlr-core-wrapper-1">
+                <div class="gdlr-core-pbf-background-wrap" style="background-color: #172852 ;"></div>
+                <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                    <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space">
+                        <div class="gdlr-core-pbf-element">
+                            <div class="gdlr-core-revolution-slider-item gdlr-core-item-pdlr gdlr-core-item-pdb " style="padding-bottom: 0px;">
+                                <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+                                    <div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.1">
+                                        <ul>
+                                            {% for slide in slides %}
+                                                <li data-index="rs-{{ loop.index }}" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="{{ absolute_url(asset('uploads/slides/'~ slide.media)) }}" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description=""> <img src="{{ absolute_url(asset('uploads/slides/'~ slide.media)) }}" alt="" title="Homepage 2" data-bgposition="center top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="110" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="off" class="rev-slidebg" data-no-retina="">
+                                                    <div class="tp-caption   tp-resizeme" id="slide-{{ loop.index }}-layer-1" data-x="28" data-y="center" data-voffset="-20" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":10,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 128px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family:Montserrat;">
+                                                        {{ slide.sousTitre }}
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 50px;">
-                                                    <div class="gdlr-core-title-item-title-wrap ">
-                                                        <img src="{{ absolute_url(asset('assets/images/logodivine_bw.png')) }}" alt="" width="300px">
+                                                    {% if slide.titre %}
+                                                        <div class="tp-caption   tp-resizeme" id="slide-{{ loop.index }}-layer-6" data-x="37" data-y="center" data-voffset="-95" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":10,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap; font-size: 60px; font-weight: 400; color: #89a6ef; letter-spacing: 0px;font-family:Montserrat;">
+                                                            {{ slide.titre }}
+                                                        </div>
+                                                    {% endif %}
+                                                    <div class="tp-caption   tp-resizeme" id="slide-{{ loop.index }}-layer-2" data-x="38" data-y="center" data-voffset="107" data-width="['724']" data-height="['65']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":280,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 7; min-width: 724px; max-width: 724px; max-width: 65px; max-width: 65px; white-space: normal; font-size: 20px; line-height: 32px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Open Sans;">
+                                                        {{ slide.description }}
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-countdown-item gdlr-core-item-pdlr gdlr-core-item-pdb " style="padding-bottom: 25px;">
-                                        <div class="gdlr-core-countdown-wrap gdlr-core-js  gdlr-core-center-align">
-                                            <span style="font-size: 5rem;">... site en construction</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" data-skin="Purple Button">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js " style="max-width: 650px;">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-divider-item-normal" style="padding-bottom: 33px;">
-                                                    <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-bottom-width: 3px;"></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 18px;">
-                                                        <p>Veuillez vous abonner à la newsletter pour recevoir nos informations.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-newsletter-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-style-rectangle" style="padding-bottom: 0px;">
+                                                </li>
+                                            {% endfor %}
 
-                                                    <div class="newsletter newsletter-subscription">
-                                                        <!--<form class="gdlr-core-newsletter-form clearfix" method="post" action="">
-                                                            <div class="gdlr-core-newsletter-email">
-                                                                <input class="newsletter-email gdlr-core-skin-e-background gdlr-core-skin-e-content" placeholder="Votre adresse mail" type="email" name="adresse" size="30" required="true  ">
-                                                            </div>
-                                                            <div class="gdlr-core-newsletter-submit">
-                                                                <input class="newsletter-submit" type="submit" value="S'inscrire">
-                                                            </div>
-                                                        </form>-->
-                                                        {{ render(url('newsletter_new')) }}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </ul>
+
+                                        <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 0px 0px;" data-skin="Column Service HP 1">
+                <div class="gdlr-core-pbf-background-wrap" style="background-color: #f5f5f5 ;">
+                    <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-size: cover;background-position: center;" data-parallax-speed="0.2"></div>
+                </div>
+                <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                    <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space">
+                        {% for domaine in domaines  %}
+                            <div class="gdlr-core-pbf-column gdlr-core-column-20 {% if loop.first %}gdlr-core-column-first{% endif %}" data-skin="Hp2 Column Service">
+                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 80px 40px 30px 60px;" data-sync-height="service-height" data-sync-height-center="">
+                                <div class="gdlr-core-pbf-background-wrap">
+                                    <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url({{ absolute_url(asset('uploads/domaines/'~ domaine.media)) }});background-size: cover;background-position: center;" data-parallax-speed="0.1"></div>
+                                </div>
+                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
+                                    <div class="gdlr-core-pbf-element">
+                                        <div class="gdlr-core-column-service-item gdlr-core-item-pdb  gdlr-core-left-align gdlr-core-column-service-icon-left gdlr-core-no-caption gdlr-core-item-pdlr" style="padding-bottom: 30px;">
+                                            <div class="gdlr-core-column-service-content-wrapper accueil-domaine">
+                                                <a href="#">
+                                                    <div class="gdlr-core-column-service-title-wrap">
+                                                        <h3 class="gdlr-core-column-service-title" style="font-size: 22px;font-weight: 600;letter-spacing: 0px;text-transform: none;">{{ domaine.titre|upper }}</h3>
+                                                    </div>
+                                                    <div class="gdlr-core-column-service-content" style="font-size: 17px;">
+                                                        <p>{{ domaine.contenu|slice(0,123) }}...</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="gdlr-core-pbf-wrapper " style="margin: 0px 0px 0px 0px;padding: 95px 0px 0px 0px;">
+                <div class="gdlr-core-pbf-background-wrap">
+                    <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-repeat: no-repeat;background-position: center;" data-parallax-speed="0.04"></div>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .accueil-domaine a{color: white}
+        .accueil-domaine a p{color: #d0f8f8 }
+        .accueil-domaine a:hover p{color: #67f6f6
+        }
+    </style>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type='text/javascript'>
+        var gdlr_core_pbf = {
+            "admin": "",
+            "video": {
+                "width": "640",
+                "height": "360"
+            },
+            "ajax_url": "",
+            "ilightbox_skin": "dark"
+        };
+    </script>
+    <script type='text/javascript'>
+        var financity_script_core = {
+            "home_url": "{{ absolute_url(path('app_home')) }}"
+        };
+    </script>
+    <script type="text/javascript" src="{{ absolute_url(asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.slideanims.min.js')) }}"></script>
+    <script type="text/javascript" src="{{ absolute_url(asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.layeranimation.min.js')) }}"></script>
+    <script type="text/javascript" src="{{ absolute_url(asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.kenburn.min.js')) }}"></script>
+    <script type="text/javascript" src="{{ absolute_url(asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.navigation.min.js')) }}"></script>
+    <script type="text/javascript" src="{{ absolute_url(asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.parallax.min.js')) }}"></script>
+    <script>
+        /*<![CDATA[*/
+        var htmlDiv = document.getElementById("rs-plugin-settings-inline-css");
+        var htmlDivCss = "";
+        if (htmlDiv) {
+            htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+        } else {
+            var htmlDiv = document.createElement("div");
+            htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+            document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+        } /*]]>*/
+    </script>
+
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        var setREVStartSize = function() {
+            try {
+                var e = new Object,
+                    i = jQuery(window).width(),
+                    t = 9999,
+                    r = 0,
+                    n = 0,
+                    l = 0,
+                    f = 0,
+                    s = 0,
+                    h = 0;
+                e.c = jQuery('#rev_slider_1_1');
+                e.gridwidth = [1300];
+                e.gridheight = [790];
+                e.sliderLayout = "auto";
+                if (e.responsiveLevels && (jQuery.each(e.responsiveLevels, function(e, f) {
+                    f > i && (t = r = f, l = e), i > f && f > r && (r = f, n = e)
+                }), t > r && (l = n)), f = e.gridheight[l] || e.gridheight[0] || e.gridheight, s = e.gridwidth[l] || e.gridwidth[0] || e.gridwidth, h = i / s, h = h > 1 ? 1 : h, f = Math.round(h * f), "fullscreen" == e.sliderLayout) {
+                    var u = (e.c.width(), jQuery(window).height());
+                    if (void 0 != e.fullScreenOffsetContainer) {
+                        var c = e.fullScreenOffsetContainer.split(",");
+                        if (c) jQuery.each(c, function(e, i) {
+                            u = jQuery(i).length > 0 ? u - jQuery(i).outerHeight(!0) : u
+                        }), e.fullScreenOffset.split("%").length > 1 && void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 ? u -= jQuery(window).height() * parseInt(e.fullScreenOffset, 0) / 100 : void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 && (u -= parseInt(e.fullScreenOffset, 0))
+                    }
+                    f = u
+                } else void 0 != e.minHeight && f < e.minHeight && (f = e.minHeight);
+                e.c.closest(".rev_slider_wrapper").css({
+                    height: f
+                })
+            } catch (d) {
+                console.log("Failure at Presize of Slider:" + d)
+            }
+        };
+        setREVStartSize();
+        var tpj = jQuery;
+        var revapi1;
+        tpj(document).ready(function() {
+            if (tpj("#rev_slider_1_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_1_1");
+            } else {
+                revapi1 = tpj("#rev_slider_1_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "{{ absolute_url(asset('assets/plugins/revslider/public/assets/js/')) }}",
+                    sliderLayout: "auto",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        mouseScrollReverse: "default",
+                        onHoverStop: "off",
+                        arrows: {
+                            style: "uranus",
+                            enable: true,
+                            hide_onmobile: false,
+                            hide_onleave: true,
+                            hide_delay: 200,
+                            hide_delay_mobile: 1200,
+                            tmp: '',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 20,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 20,
+                                v_offset: 0
+                            }
+                        },
+                        bullets: {
+                            enable: true,
+                            hide_onmobile: false,
+                            style: "uranus",
+                            hide_onleave: false,
+                            direction: "horizontal",
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: 0,
+                            v_offset: 30,
+                            space: 10,
+                            tmp: '<span class="tp-bullet-inner"></span>'
+                        }
+                    },
+                    visibilityLevels: [1240, 1024, 778, 480],
+                    gridwidth: 1300,
+                    gridheight: 790,
+                    lazyType: "none",
+                    parallax: {
+                        type: "mouse",
+                        origo: "enterpoint",
+                        speed: 400,
+                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 55],
+                    },
+                    shadow: 0,
+                    spinner: "off",
+                    stopLoop: "off",
+                    stopAfterLoops: -1,
+                    stopAtSlide: -1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    disableProgressBar: "on",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            }
+        }); /*]]>*/
+    </script>
 {% endblock %}

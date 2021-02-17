@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Domaine;
 use App\Entity\Newsletter;
+use App\Entity\Slide;
 use App\Form\NewsletterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,10 +18,17 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        /*return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);*/
-        return $this->redirectToRoute('app_maintenance');
+        $slides = $this->getDoctrine()->getRepository(Slide::class)->findAll();
+        $domaines = $this->getDoctrine()->getRepository(Domaine::class)->findAll();
+
+        // Si les slides et domaines n'existent pas alors rediriger vers la maintenance;
+        if (!$slides || !$domaines)
+            return $this->redirectToRoute('app_maintenance');
+
+        return $this->render('home/index.html.twig', [
+            'slides' => $slides,
+            'domaines' => $domaines
+        ]);
     }
 
     /**
