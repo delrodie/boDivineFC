@@ -1182,7 +1182,7 @@
 
 /* breadcrumbs */
 .gdlr-core-breadcrumbs-item{ font-size: 14px; padding: 22px 0px; }
-.gdlr-core-breadcrumbs-item span[property="itemListElement"]{ margin: 0px 22px; }
+.gdlr-core-breadcrumbs-item span[property="itemListElement"]{ margin: 0px 10px; }
 .gdlr-core-breadcrumbs-item span[property="itemListElement"]:first-child{ margin-left: 0px; }
 .gdlr-core-breadcrumbs-item a span{ transition: color 200ms; -moz-transition: color 200ms; -o-transition: color 200ms; -webkit-transition: color 200ms; }
 
