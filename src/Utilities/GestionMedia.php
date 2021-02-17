@@ -11,10 +11,12 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 class GestionMedia
 {
     private $mediaSlide;
+    private $mediaDomaine;
 
-    public function __construct($slideDirectory)
+    public function __construct($slideDirectory, $domaineDirectory)
     {
         $this->mediaSlide = $slideDirectory;
+        $this->mediaDomaine = $domaineDirectory;
     }
 
     /**
@@ -36,6 +38,7 @@ class GestionMedia
         // Deplacement du fichier dans le repertoire dedié
         try {
             if ($media === 'slide') $file->move($this->mediaSlide, $newFilename);
+            elseif ($media === 'domaine') $file->move($this->mediaDomaine, $newFilename);
             else $file->move($this->mediaSlide, $newFilename);
         }catch (FileException $e){
 
@@ -54,6 +57,7 @@ class GestionMedia
     public function removeUpload($ancienMedia, $media = null)
     {
         if ($media === 'slide') unlink($this->mediaSlide.'/'.$ancienMedia);
+        elseif ($media === 'domaine') unlink($this->mediaDomaine.'/'.$ancienMedia);
         else return false;
 
         return true;

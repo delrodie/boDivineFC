@@ -33,3 +33,4 @@ services:
     App\Utilities\GestionMedia:
         arguments:
             $slideDirectory: '%kernel.project_dir%/public/uploads/slides'
+            $domaineDirectory: '%kernel.project_dir%/public/uploads/domaines'

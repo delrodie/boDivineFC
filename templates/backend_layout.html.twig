@@ -37,8 +37,9 @@
                         <a href="#" class="nav-link with-sub {% if menu == 'accueil' %}active{% endif %}"><i data-feather="layout"></i> Accueil</a>
                         <nav class="nav nav-sub">
                             <a href="{{ path('backend_slide_index') }}" class="nav-sub-link {% if sub_menu == 'slide' %}active{% endif %}">Slide</a>
-                            <a href="#" class="nav-sub-link {% if sub_menu == 'president' %}active{% endif %}">Services</a>
-                            <a href="#" class="nav-sub-link {% if sub_menu == 'agenda' %}active{% endif %}">Vision</a>
+                            <a href="{{ path('backend_domaine_index') }}" class="nav-sub-link {% if sub_menu == 'domaine' %}active{% endif %}">Domaines</a>
+                            <a href="#" class="nav-sub-link {% if sub_menu == 'metier' %}active{% endif %}">Metiers</a>
+                            <a href="#" class="nav-sub-link {% if sub_menu == 'vision' %}active{% endif %}">Vision</a>
                         </nav>
                     </li>
                     <li class="nav-item">
