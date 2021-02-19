@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Domaine;
+use App\Entity\Mission;
 use App\Entity\Newsletter;
 use App\Entity\Slide;
 use App\Form\NewsletterType;
@@ -26,9 +27,10 @@ class HomeController extends AbstractController
             return $this->redirectToRoute('app_maintenance');
 
         return $this->render('home/index.html.twig', [
+            'menu' => "accueil",
             'slides' => $slides,
             'domaines' => $domaines,
-            'menu' => "accueil"
+            'mission' => $this->getDoctrine()->getRepository(Mission::class)->findOneBy(['statut'=>true],["id"=>"DESC"])
         ]);
     }
 
