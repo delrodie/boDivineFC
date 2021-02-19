@@ -50,11 +50,7 @@
                         </nav>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link with-sub"><i data-feather="lock"></i> Services</a>
-                        <nav class="nav nav-sub">
-                            <a href="#" class="nav-sub-link">Service 1</a>
-                            <a href="#" class="nav-sub-link">Service 2</a>
-                        </nav>
+                        <a href="{{ path('backend_metier_index') }}" class="nav-link {% if menu == 'metier' %}active{% endif %}"><i data-feather="lock"></i> Metiers</a>
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link"><i data-feather="aperture"></i> Actualités</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><i data-feather="aperture"></i> Blog</a></li>
