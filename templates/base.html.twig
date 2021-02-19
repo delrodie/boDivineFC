@@ -21,7 +21,7 @@
                 <div class="financity-mobile-header-container financity-container">
                     <div class="financity-logo  financity-item-pdlr">
                         <div class="financity-logo-inner">
-                            <a href="#"><img src="{{ absolute_url(asset('assets/images/logodivine_bw.png')) }}" alt="" width="211" height="48"></a>
+                            <a href="{{ path('app_home') }}"><img src="{{ absolute_url(asset('assets/images/bw_logo.png')) }}" alt="" width="211" height="48"></a>
                         </div>
                     </div>
                     <div class="financity-mobile-menu-right">
@@ -32,14 +32,14 @@
                                     <li class="menu-item menu-item-home current-menu-item page_item page-item-2039 current_page_item"><a href="{{ absolute_url(path("app_home")) }}">Accueil</a></li>
                                     <li class="menu-item menu-item-has-children"><a href="#">Qui sommes-nous?</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item"><a href="#">Présentation</a></li>
+                                            <li class="menu-item"><a href="{{ path('frontend_presentation') }}">Présentation</a></li>
                                             <li class="menu-item"><a href="#">Notre équipe</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item menu-item-has-children"><a href="#">Nos Services</a>
+                                    <li class="menu-item menu-item-has-children"><a href="#">Nos metiers</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item"><a href="#">Service 1</a></li>
-                                            <li class="menu-item"><a href="#">Service 2</a></li>
+                                            <li class="menu-item"><a href="#">Metier 1</a></li>
+                                            <li class="menu-item"><a href="#">Metier 2</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item menu-item-has-children"><a href="#">Actualités</a></li>
@@ -89,7 +89,7 @@
                             <div class="financity-header-container-inner clearfix">
                                 <div class="financity-logo  financity-item-pdlr">
                                     <div class="financity-logo-inner">
-                                        <a href="#"><img src="{{ absolute_url(asset('assets/images/logodivine_bw.png')) }}" alt="" width="130"></a>
+                                        <a href="{{ path('app_home') }}"><img src="{{ absolute_url(asset('assets/images/bw_logo.png')) }}" alt="" width="130"></a>
                                     </div>
                                 </div>
                                 <div class="financity-navigation financity-item-pdlr clearfix ">
@@ -127,7 +127,7 @@
                             <div class="financity-footer-column financity-item-pdlr financity-column-15">
                                 <div id="text-2" class="widget widget_text financity-widget">
                                     <div class="textwidget">
-                                        <p><img src="{{ absolute_url(asset('assets/images/logodivine_bw.png')) }}" alt="Logo Divine Finances Conseils"></p>
+                                        <p><img src="{{ absolute_url(asset('assets/images/bw_logo.png')) }}" alt="Logo Divine Finances Conseils"></p>
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +136,7 @@
                                     <h3 class="financity-widget-title">Rubriques</h3>
                                     <div class="menu-useful-links-container">
                                         <ul id="menu-useful-links" class="menu">
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5507"><a href="#">Présentation</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5507"><a href="{{ path('frontend_presentation') }}">Présentation</a></li>
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5506"><a href="#">Notre équipe</a></li>
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5512"><a href="#">Nos metiers</a></li>
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5508"><a href="#">Nos ambitions</a></li>
