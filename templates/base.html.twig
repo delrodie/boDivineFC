@@ -63,7 +63,7 @@
                             <span class="gdlr-core-dropdown-tab-content-wrap">
                                 <span class="gdlr-core-dropdown-tab-content gdlr-core-active" data-index="0">
                                     <i class="fa fa-clock-o" style="font-size: 17px;color: #a5bfff;margin-right: 10px;"></i> <strong><span id="date_heure"></span></strong>
-                                    <i class="fa fa-phone" style="font-size: 17px;color: #a5bfff;margin-left: 20px;margin-right: 10px;"></i><strong>+225 00 00 00 00</strong>
+                                    <i class="fa fa-phone" style="font-size: 17px;color: #a5bfff;margin-left: 20px;margin-right: 10px;"></i><strong>+225 27 22 59 92 65</strong>
                                     <script type="text/javascript">window.onload = date_heure('date_heure');</script>
                                 </span>
                             </span>
@@ -98,7 +98,9 @@
                                             <li class="menu-item menu-item-home {% if menu == "accueil" %} current-menu-item {% endif %} page_item  page-item-2039 current_page_item financity-normal-menu"><a href="{{ absolute_url(path("app_home")) }}"><i class="fa fa-home"></i>Accueil</a></li>
                                             <li class="menu-item menu-item-has-children {% if menu == "presentation" %} current-menu-item {% endif %} financity-normal-menu"><a href="#" class="sf-with-ul-pre">Qui sommes-nous?</a>
                                                 <ul class="sub-menu">
-                                                    <li class="menu-item" data-size="60"><a href="#">Présentation</a></li>
+                                                    <li class="menu-item" data-size="60">
+                                                        <a href="{{ absolute_url(path('frontend_presentation')) }}">Présentation</a>
+                                                    </li>
                                                     <li class="menu-item" data-size="60"><a href="#">Notre équipe</a></li>
                                                 </ul>
                                             </li>
