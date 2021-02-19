@@ -1,0 +1,7 @@
+<ul class="sub-menu">
+    {% for metier in metiers %}
+        <li class="menu-item" data-size="60">
+            <a href="{{ absolute_url(path('frontend_metier_show', {'slug': metier.slug})) }}">{{ metier.titre }}</a>
+        </li>
+    {% endfor %}
+</ul>

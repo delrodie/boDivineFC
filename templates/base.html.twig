@@ -103,10 +103,7 @@
                                                 </ul>
                                             </li>
                                             <li class="menu-item menu-item-has-children {% if menu == "metier" %} current-menu-item {% endif %} financity-normal-menu"><a href="#" class="sf-with-ul-pre">Nos metiers</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item" data-size="60"><a href="#">Service 1</a></li>
-                                                    <li class="menu-item" data-size="60"><a href="#">Service 2</a></li>
-                                                </ul>
+                                                {{ render(url('frontend_metier_menu')) }}
                                             </li>
                                             <li class="menu-item menu-item-has-children {% if menu == "actualite" %} current-menu-item {% endif %} financity-normal-menu"><a href="#" class="sf-with-ul-pre">Actualités</a>
                                             </li>
@@ -139,8 +136,8 @@
                                         <ul id="menu-useful-links" class="menu">
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5507"><a href="#">Présentation</a></li>
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5506"><a href="#">Notre équipe</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5512"><a href="#">Nore metier</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5508"><a href="#">Vision</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5512"><a href="#">Nos metiers</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5508"><a href="#">Nos ambitions</a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -42,6 +42,11 @@ class Metier
      */
     private $slug;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $resume;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +108,18 @@ class Metier
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(?string $resume): self
+    {
+        $this->resume = $resume;
 
         return $this;
     }

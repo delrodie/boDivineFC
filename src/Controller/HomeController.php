@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Domaine;
+use App\Entity\Metier;
 use App\Entity\Mission;
 use App\Entity\Newsletter;
 use App\Entity\Slide;
@@ -19,6 +20,7 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
+
         $slides = $this->getDoctrine()->getRepository(Slide::class)->findAll();
         $domaines = $this->getDoctrine()->getRepository(Domaine::class)->findAll();
 
@@ -30,7 +32,8 @@ class HomeController extends AbstractController
             'menu' => "accueil",
             'slides' => $slides,
             'domaines' => $domaines,
-            'mission' => $this->getDoctrine()->getRepository(Mission::class)->findOneBy(['statut'=>true],["id"=>"DESC"])
+            'mission' => $this->getDoctrine()->getRepository(Mission::class)->findOneBy(['statut'=>true],["id"=>"DESC"]),
+            'metiers' => $this->getDoctrine()->getRepository(Metier::class)->findBy(['statut'=>true])
         ]);
     }
 

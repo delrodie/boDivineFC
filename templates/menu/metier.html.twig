@@ -1,0 +1,40 @@
+<div class="gdlr-core-pbf-sidebar-left gdlr-core-column-extend-left  financity-sidebar-area gdlr-core-column-15 gdlr-core-pbf-sidebar-padding  gdlr-core-line-height" style="padding: 60px 25px 30px 0px;">
+    <div class="gdlr-core-sidebar-item">
+        <div id="text-9" class="widget widget_text financity-widget">
+            <div class="textwidget">
+                <h3 class="large-widget-title">Nos metiers</h3> <span class="gdlr-core-space-shortcode" style="margin-top: -25px;"></span></div>
+        </div>
+        <div id="nav_menu-3" class="widget widget_nav_menu financity-widget">
+            <div class="menu-our-services-container">
+                <ul id="menu-our-services" class="menu">
+                    {% for metier in metiers %}
+                        <li class="menu-item current_page_item menu-item-5453">
+                            <a href="{{ absolute_url(path('frontend_metier_show', {'slug': metier.slug}) )}}">{{metier.titre }}</a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+        <div id="text-8" class="widget widget_text financity-widget">
+            <div class="textwidget">
+                <p>
+                    <span class="gdlr-core-space-shortcode" style="margin-top: 25px;"></span>
+                <div class="gdlr-core-widget-box-shortcode" style="color: #3b3b3b;padding: 35px 35px 15px;border: 2px solid #313787;">
+                    <h3 class="gdlr-core-widget-box-shortcode-title" style="color: #3e4494;">Nous contacter ?</h3>
+                    <div class="gdlr-core-widget-box-shortcode-content">
+                        <p>Cocody Mermos - Imm. DIA | Abidjan, Côte d'Ivoire</p>
+                        <p><span style="font-size: 16px;"><i class="fa fa-phone" style="font-size: 16px;color: #059C53;margin-right: 10px;"></i> <a href="#">+225 27 22 59 92 65</a></span>
+                            <br> <span style="font-size: 16px;"><i class="fa fa-envelope-open-o" style="font-size: 16px;color: #059C53;margin-right: 10px;"></i> <a href="mailto:infos@divinefinancesci.com">infos</a></span>
+                        </p>
+                    </div>
+                </div>
+                <span class="gdlr-core-space-shortcode" style="margin-top: 25px;"></span>
+                <a class="gdlr-core-button  gdlr-core-button-solid gdlr-core-button-no-border gdlr-core-button-full-width" href="#" style="padding: 19px 29px;border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;background: #059C53 ;">
+                    <span class="gdlr-core-content">Newsletter</span><i class="gdlr-core-pos-right fa fa-long-arrow-right"></i>
+                </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

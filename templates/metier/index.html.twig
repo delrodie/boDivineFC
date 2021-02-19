@@ -35,8 +35,9 @@
             <thead>
             <tr>
                 <th class="wd-5p text-center">#</th>
-                <th class="wd-25p text-center">TITRE</th>
-                <th class="wd-25p text-center">STATUT</th>
+                <th class="wd-30p text-center">TITRE</th>
+                <th class="wd-50p text-center">RESUME</th>
+                <th class="wd-10p text-center">STATUT</th>
             </tr>
             </thead>
             <tbody>
@@ -45,6 +46,9 @@
                     <td>{{ loop.index }}</td>
                     <td>
                         <a href="#metier{{ metier.id }}" data-toggle="modal">{{ metier.titre }}</a>
+                    </td>
+                    <td>
+                        {{ metier.resume|raw }}
                     </td>
                     <td class="text-center">
                         {% if metier.statut %}

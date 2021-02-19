@@ -25,6 +25,11 @@ class MetierType extends AbstractType
                 'attr'=>['class'=>"form-control", 'rows'=>7],
                 'label' => "La description du metier"
             ])
+            ->add('resume', TextareaType::class,[
+                'attr'=>['class'=>"form-control", 'rows'=>3],
+                'label' => "Le resumé de la description",
+                'required' => false
+            ])
             ->add('media', FileType::class,[
                 'attr'=>['class'=>"custom-file-input", 'data-preview' => ".preview"],
                 'label' => "Télécharger la photo",
