@@ -21,6 +21,7 @@ class FrDomaineController extends AbstractController
     {
         return $this->render('frontend/domaine.html.twig',[
             'domaines' => $this->getDoctrine()->getRepository(Domaine::class)->findAll(),
+            'menu' => "presentation"
         ]);
     }
 }

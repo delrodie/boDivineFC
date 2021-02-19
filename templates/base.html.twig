@@ -44,7 +44,7 @@
                                     </li>
                                     <li class="menu-item menu-item-has-children"><a href="#">Actualités</a></li>
                                     <li class="menu-item menu-item-has-children"><a href="#">Blog</a></li>
-                                    <li class="menu-item menu-item-has-children"><a href="#">Contact</a> </li>
+                                    <li class="menu-item menu-item-has-children"><a href="{{ absolute_url(path("frontend_contact_index")) }}">Contact</a> </li>
                                 </ul>
                             </div>
                         </div>
@@ -95,24 +95,24 @@
                                 <div class="financity-navigation financity-item-pdlr clearfix ">
                                     <div class="financity-main-menu" id="financity-main-menu">
                                         <ul id="menu-main-navigation-1" class="sf-menu">
-                                            <li class="menu-item menu-item-home current-menu-item page_item page-item-2039 current_page_item financity-normal-menu"><a href="{{ absolute_url(path("app_home")) }}"><i class="fa fa-home"></i>Accueil</a></li>
-                                            <li class="menu-item menu-item-has-children financity-normal-menu"><a href="#" class="sf-with-ul-pre">Qui sommes-nous?</a>
+                                            <li class="menu-item menu-item-home {% if menu == "accueil" %} current-menu-item {% endif %} page_item  page-item-2039 current_page_item financity-normal-menu"><a href="{{ absolute_url(path("app_home")) }}"><i class="fa fa-home"></i>Accueil</a></li>
+                                            <li class="menu-item menu-item-has-children {% if menu == "presentation" %} current-menu-item {% endif %} financity-normal-menu"><a href="#" class="sf-with-ul-pre">Qui sommes-nous?</a>
                                                 <ul class="sub-menu">
                                                     <li class="menu-item" data-size="60"><a href="#">Présentation</a></li>
                                                     <li class="menu-item" data-size="60"><a href="#">Notre équipe</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item menu-item-has-children financity-normal-menu"><a href="services.html" class="sf-with-ul-pre">Nos Services</a>
+                                            <li class="menu-item menu-item-has-children {% if menu == "metier" %} current-menu-item {% endif %} financity-normal-menu"><a href="#" class="sf-with-ul-pre">Nos metiers</a>
                                                 <ul class="sub-menu">
                                                     <li class="menu-item" data-size="60"><a href="#">Service 1</a></li>
                                                     <li class="menu-item" data-size="60"><a href="#">Service 2</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item menu-item-has-children financity-normal-menu"><a href="#" class="sf-with-ul-pre">Actualités</a>
+                                            <li class="menu-item menu-item-has-children {% if menu == "actualite" %} current-menu-item {% endif %} financity-normal-menu"><a href="#" class="sf-with-ul-pre">Actualités</a>
                                             </li>
-                                            <li class="menu-item menu-item-has-children financity-normal-menu"><a href="#" class="sf-with-ul-pre">Blog</a>
+                                            <li class="menu-item menu-item-has-children {% if menu == "blog" %} current-menu-item {% endif %} financity-normal-menu"><a href="#" class="sf-with-ul-pre">Blog</a>
                                             </li>
-                                            <li class="menu-item menu-item-has-children financity-normal-menu"><a href="#" class="sf-with-ul-pre">Contact</a></li>
+                                            <li class="menu-item menu-item-has-children {% if menu == "contact" %} current-menu-item {% endif %} financity-normal-menu"><a href="{{ absolute_url(path('frontend_contact_index')) }}" class="sf-with-ul-pre">Contact</a></li>
                                         </ul>
                                         <div class="financity-navigation-slide-bar" id="financity-navigation-slide-bar"></div>
                                     </div>
@@ -128,7 +128,7 @@
                             <div class="financity-footer-column financity-item-pdlr financity-column-15">
                                 <div id="text-2" class="widget widget_text financity-widget">
                                     <div class="textwidget">
-                                        <p><img src="{{ absolute_url(asset('assets/images/logodivine_bw.png')) }}" alt=""></p>
+                                        <p><img src="{{ absolute_url(asset('assets/images/logodivine_bw.png')) }}" alt="Logo Divine Finances Conseils"></p>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5507"><a href="#">Services</a></li>
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5506"><a href="#">Actualités</a></li>
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5512"><a href="#">Blog</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5508"><a href="#">Contact</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5508"><a href="{{ absolute_url(path('frontend_contact_index')) }}">Contact</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -163,8 +163,8 @@
                                     <div class="textwidget">
                                         <p></p>
                                         <p><i class="fa fa-location-arrow" style="font-size: 16px;color: #ffffff;margin-right: 10px;"></i>Cocody Abidjan Côte d'Ivoire
-                                            <br> <span class="gdlr-core-space-shortcode" style="margin-top: 10px;"></span> <i class="fa fa-phone" style="font-size: 16px;color: #ffffff;margin-right: 10px;"></i> +225 00 00 00 00
-                                            <br> <span class="gdlr-core-space-shortcode" style="margin-top: 10px;"></span> <i class="fa fa-envelope-open-o" style="font-size: 16px;color: #ffffff;margin-right: 10px;"></i> infos@divinefinncesci.com
+                                            <br> <span class="gdlr-core-space-shortcode" style="margin-top: 10px;"></span> <i class="fa fa-phone" style="font-size: 16px;color: #ffffff;margin-right: 10px;"></i> +225 27 22 59 92 68
+                                            <br> <span class="gdlr-core-space-shortcode" style="margin-top: 10px;"></span> <i class="fa fa-envelope-open-o" style="font-size: 16px;color: #ffffff;margin-right: 10px;"></i> infos@divinefinancesci.com
                                             <br> <span class="gdlr-core-space-shortcode" style="margin-top: 10px;"></span> <i class="fa fa-clock-o" style="font-size: 16px;color: #ffffff;margin-right: 10px;"></i> Lun-ven : 08H-17h</p>
                                     </div>
                                 </div>

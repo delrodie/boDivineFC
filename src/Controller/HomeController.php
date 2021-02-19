@@ -27,7 +27,8 @@ class HomeController extends AbstractController
 
         return $this->render('home/index.html.twig', [
             'slides' => $slides,
-            'domaines' => $domaines
+            'domaines' => $domaines,
+            'menu' => "accueil"
         ]);
     }
 
