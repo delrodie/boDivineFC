@@ -1,0 +1,20 @@
+<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h6 class="modal-title" id="exampleModalLabel4">{{ presentation.titre }}</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i data-feather="x"></i></span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p class="mt-3">
+                {{ presentation.contenu|raw }}
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            {{ include('presentation/_delete_form.html.twig') }}
+            <a href="{{ path('backend_presentation_edit', {'id': presentation.id}) }}" class="btn btn-primary"> Modifier</a>
+        </div>
+    </div>
+</div>
