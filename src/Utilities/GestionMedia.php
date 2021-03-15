@@ -13,12 +13,14 @@ class GestionMedia
     private $mediaSlide;
     private $mediaDomaine;
     private $mediaMetier;
+    private $mediaEquipe;
 
-    public function __construct($slideDirectory, $domaineDirectory, $metierDirectory)
+    public function __construct($slideDirectory, $domaineDirectory, $metierDirectory, $equipeDirectory)
     {
         $this->mediaSlide = $slideDirectory;
         $this->mediaDomaine = $domaineDirectory;
         $this->mediaMetier = $metierDirectory;
+        $this->mediaEquipe = $equipeDirectory;
     }
 
     /**
@@ -42,6 +44,7 @@ class GestionMedia
             if ($media === 'slide') $file->move($this->mediaSlide, $newFilename);
             elseif ($media === 'domaine') $file->move($this->mediaDomaine, $newFilename);
             elseif ($media === 'metier') $file->move($this->mediaMetier, $newFilename);
+            elseif ($media === 'equipe') $file->move($this->mediaEquipe, $newFilename);
             else $file->move($this->mediaSlide, $newFilename);
         }catch (FileException $e){
 
@@ -62,6 +65,7 @@ class GestionMedia
         if ($media === 'slide') unlink($this->mediaSlide.'/'.$ancienMedia);
         elseif ($media === 'domaine') unlink($this->mediaDomaine.'/'.$ancienMedia);
         elseif ($media === 'metier') unlink($this->mediaMetier.'/'.$ancienMedia);
+        elseif ($media === 'equipe') unlink($this->mediaEquipe.'/'.$ancienMedia);
         else return false;
 
         return true;

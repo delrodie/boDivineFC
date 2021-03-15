@@ -35,3 +35,4 @@ services:
             $slideDirectory: '%kernel.project_dir%/public/uploads/slides'
             $domaineDirectory: '%kernel.project_dir%/public/uploads/domaines'
             $metierDirectory: '%kernel.project_dir%/public/uploads/metiers'
+            $equipeDirectory: '%kernel.project_dir%/public/uploads/equipe'

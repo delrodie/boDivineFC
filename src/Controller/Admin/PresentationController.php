@@ -23,7 +23,7 @@ class PresentationController extends AbstractController
     {
         return $this->render('presentation/index.html.twig', [
             'presentations' => $presentationRepository->findAll(),
-            'menu' => "accueil",
+            'menu' => "presentation",
             'sub_menu' => "presentation"
         ]);
     }

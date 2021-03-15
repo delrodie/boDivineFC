@@ -1,0 +1,110 @@
+{% extends 'backend_layout.html.twig' %}
+
+{% block title %}{{ parent() }} Gestion des equipes{% endblock %}
+
+{% block body %}
+    <h4 class="content-title">
+        Gestion des equipes
+    </h4>
+    <p>
+        L'interface de <strong>Gestion des equipes</strong> permet d'ajouter, de modifier et de supprimer les equipes de l'accueil.
+    </p>
+    <div class="row">
+        <div class="col text-right">
+            <a href="{{ path('backend_equipe_new') }}" class="btn btn-outline-primary">
+                <i class="fa fa-plus-circle"></i> Ajouter
+            </a>
+
+        </div>
+    </div>
+    <div class="component-section no-code">
+        <h5 id="section1" class="tx-semibold">Liste des equipes</h5>
+        <p class="mg-b-25"></p>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }} alert-dismissible mg-b-25 fade show" role="alert">
+                    {{message}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <table id="userList" class="table">
+            <thead>
+            <tr>
+                <th class="wd-5p text-center">#</th>
+                <th class="wd-25p text-center">NOM & PRENOMS</th>
+            </tr>
+            </thead>
+            <tbody class="">
+            {% for equipe in equipes %}
+                <tr class="">
+                    <td>{{ loop.index }}</td>
+                    <td>
+                        <div class="avatar"><img src="{{ absolute_url(asset('uploads/equipe/'~ equipe.media)) }}" class="rounded-circle" alt=""></div>
+                        <a href="#equipe{{ equipe.id }}" data-toggle="modal">{{ equipe.nom }}</a>
+                        <br>
+                        <div class="fonction">{{ equipe.fonction }}</div>
+
+                    </td>
+                </tr>
+                <div class="modal fade" id="equipe{{ equipe.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+                    {{ render(url('backend_equipe_show',{'id': equipe.id})) }}
+                </div>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/lib/prismjs/themes/prism-tomorrow.css')) }}">
+    <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/lib/datatables.net-dt/css/jquery.dataTables.min.css')) }}">
+    <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css')) }}">
+    <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/lib/select2/css/select2.min.css')) }}">
+    <style>
+        .avatar {
+            float: left;
+            width: 38px;
+            height: 38px;
+        }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;}
+        .fonction{
+            padding-left: 15px;
+            margin-left: 25px;
+        }
+    </style>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ absolute_url(asset('backoffice/lib/prismjs/prism.js')) }}"></script>
+    <script src="{{ absolute_url(asset('backoffice/lib/datatables.net/js/jquery.dataTables.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('backoffice/lib/datatables.net-dt/js/dataTables.dataTables.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('backoffice/lib/datatables.net-responsive/js/dataTables.responsive.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('backoffice/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('backoffice/lib/select2/js/select2.min.js')) }}"></script>
+    <script>
+        $(function(){
+            'use strict'
+
+            $('#userList').DataTable({
+                //responsive: true,
+                language: {
+                    searchPlaceholder: 'Recherche...',
+                    sSearch: '',
+                    lengthMenu: '_MENU_ elements/page',
+                }
+            });
+
+
+            // Select2
+            $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
+        });
+    </script>
+{% endblock %}

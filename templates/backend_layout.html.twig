@@ -45,8 +45,8 @@
                     <li class="nav-item {% if menu == 'presentation' %}show{% endif %}">
                         <a href="#" class="nav-link with-sub "><i data-feather="layout"></i> Qui sommes-nous?</a>
                         <nav class="nav nav-sub">
-                            <a href="{{ path('backend_presentation_index') }}" class="nav-sub-link {% if menu == 'presenation' %}active{% endif %}">Présentation</a>
-                            <a href="#" class="nav-sub-link">Notre equipe</a>
+                            <a href="{{ path('backend_presentation_index') }}" class="nav-sub-link {% if sub_menu == 'presentation' %}active{% endif %}">Présentation</a>
+                            <a href="{{ path('backend_equipe_index') }}" class="nav-sub-link {% if sub_menu == 'equipe' %}active{% endif %}">Notre equipe</a>
                         </nav>
                     </li>
                     <li class="nav-item">
