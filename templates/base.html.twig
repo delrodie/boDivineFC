@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8; cha">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Divine Finances Conseils SA{% endblock %}</title>
+        {% block meta %}{% endblock %}
         {% block stylesheets %}
             <link rel='stylesheet' href='{{ absolute_url(asset('assets/plugins/revslider/public/assets/css/settings.css')) }}' type='text/css' media='all'>
             <link rel='stylesheet' href='{{ absolute_url(asset('assets/css/style-core.css')) }}' type='text/css' media='all'>
@@ -14,6 +15,15 @@
             <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7COpen+Sans%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%7CAsap%3Aregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic&amp;subset=latin-ext%2Clatin%2Cvietnamese%2Ccyrillic-ext%2Cgreek%2Cgreek-ext%2Ccyrillic&amp;ver=4.9.5' type='text/css' media='all'>
         {% endblock %}
         <script src="{{ absolute_url(asset('assets/js/date.js')) }}"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JL1PY66KM7"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-JL1PY66KM7');
+        </script>
     </head>
     <body class="page-template-default page page-id-2023 gdlr-core-body financity-body financity-body-front financity-full  financity-with-sticky-navigation gdlr-core-link-to-lightbox">
         <div class="financity-mobile-header-wrap">
@@ -101,7 +111,9 @@
                                                     <li class="menu-item" data-size="60">
                                                         <a href="{{ absolute_url(path('frontend_presentation')) }}">Présentation</a>
                                                     </li>
-                                                    <li class="menu-item" data-size="60"><a href="#">Notre équipe</a></li>
+                                                    <li class="menu-item" data-size="60">
+                                                        <a href="{{ absolute_url(path('frontend_equipe_index')) }}">Notre équipe</a>
+                                                    </li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item menu-item-has-children {% if menu == "metier" %} current-menu-item {% endif %} financity-normal-menu"><a href="#" class="sf-with-ul-pre">Nos metiers</a>

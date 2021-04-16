@@ -6,6 +6,7 @@ use App\Entity\Equipe;
 use App\Form\EquipeType;
 use App\Repository\EquipeRepository;
 use App\Utilities\GestionMedia;
+use Cocur\Slugify\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -47,6 +48,9 @@ class EquipeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
 
+            $slugify = new Slugify();
+            $slug = $slugify->slugify($equipe->getNom()).'-'.$slugify->slugify($equipe->getFonction());
+
             // Gestion des medias
             $mediaFile = $form->get('media')->getData();
 
@@ -59,7 +63,7 @@ class EquipeController extends AbstractController
 
                 return $this->redirectToRoute('backend_equipe_new');
             }
-
+            $equipe->setSlug($slug);
             $entityManager->persist($equipe);
             $entityManager->flush();
 
@@ -95,7 +99,12 @@ class EquipeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();$mediaFile = $form->get('media')->getData();
+
+            $slugify = new Slugify();
+            $slug = $slugify->slugify($equipe->getNom()).'-'.$slugify->slugify($equipe->getFonction());
+            $equipe->setSlug($slug);
+
+            $mediaFile = $form->get('media')->getData();
 
             if ($mediaFile){
                 $media = $this->gestionMedia->upload($mediaFile, 'equipe');
@@ -105,6 +114,7 @@ class EquipeController extends AbstractController
 
                 $equipe->setMedia($media);
             }
+            $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('backend_equipe_index');
         }
