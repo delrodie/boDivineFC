@@ -4,11 +4,11 @@
     <url>
         <loc>
             {% if url.loc|replace({hostname:''}) ==url.loc %}
-                {{ hostname }} {{ url.loc }}
+                {{ hostname }}{{ url.loc }}
             {% else %}
                 {{ url.loc }}
             {% endif %}
-            
+
             {% if url.image is defined and url.image is not empty %}
                 <image:image>
                     <image:loc>
