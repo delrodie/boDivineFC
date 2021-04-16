@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Domaine;
+use App\Entity\Equipe;
 use App\Entity\Metier;
 use App\Entity\Mission;
 use App\Entity\Newsletter;
@@ -38,7 +39,79 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/maintenance", name="app_maintenance", methods={"GET","POST"})
+     * cf: https://nouvelle-techno.fr/actualites/live-coding-creer-un-fichier-sitemap-xml-avec-symfony-4
+     *
+     * @Route("/sitemap.xml", name="app_sitemap", defaults={"_format"="xml"})
+     */
+    public function sitemap(Request $request)
+    {
+        // Nous recuperons le nom d'hôte
+        $hostname= $request->getSchemeAndHttpHost();
+
+        // On initialise un tableau pour lister les Urls
+        // Puis ajoute les urls statiques
+        $urls = [];
+        $medias = [
+            'loc'=> '/assets/images/logo-divine.png',
+            'title' => "Divine Finances Conseils"
+        ];
+
+        $urls[] = [
+            'loc' => $this->generateUrl('app_home'),
+            'image' => $medias
+        ];
+        $urls[] = [
+            'loc' => $this->generateUrl('frontend_contact_index'),
+            'image' => $medias
+        ];
+        $urls[] = [
+            'loc' => $this->generateUrl('frontend_domaine_index'),
+            'image' => $medias
+        ];
+        $urls[] = [
+            'loc' => $this->generateUrl('frontend_equipe_index'),
+            'image'=>$medias
+        ];
+        $urls[] = [
+            'loc' => $this->generateUrl('frontend_presentation'),
+            'image' => $medias
+        ];
+
+        // On ajoute les urls de domaine
+        $metiers = $this->getDoctrine()->getRepository(Metier::class)->findBy(['statut'=>true]);
+        foreach ($metiers as $metier){
+            $urls[] = ['loc' => $this->generateUrl('frontend_metier_show', ['slug'=>$metier->getSlug()])];
+        }
+
+        // On ajoute les urls d'equipe
+        $equipes = $this->getDoctrine()->getRepository(Equipe::class)->findAll();
+        foreach ($equipes as $equipe){
+            $images = [
+                'loc' => 'uploads/equipe/'.$equipe->getMedia(),
+                'title' => $equipe->getNom()
+            ];
+            $urls[] = [
+                'loc' => $this->generateUrl('frontend_equipe_show', ['slug'=>$equipe->getSlug()]),
+                'image' => $images
+            ];
+        }
+
+        // Fabrication de la réponse XML
+        $response = new Response(
+            $this->renderView('home/sitemap.html.twig',[
+                'urls' => $urls,
+                'hostname' => $hostname
+            ]), 200
+        );
+
+        // Ajout des entêtes
+        $response->headers->set('Content-Type', 'text/xml');
+
+        return $response;
+    }
+
+    /**
+     * @Route("/maintenance/", name="app_maintenance", methods={"GET","POST"})
      */
     public function maintenance(Request $request)
     {

@@ -23,4 +23,14 @@ class FrEquipeController extends AbstractController
             'menu' => 'presentation'
         ]);
     }
+
+    /**
+     * @Route("/{slug}", name="frontend_equipe_show", methods={"GET"})
+     */
+    public function show(Equipe $equipe): Response
+    {
+        return $this->render('frontend/equipe_show.html.twig',[
+            'equipe' => $equipe
+        ]);
+    }
 }
