@@ -9,18 +9,6 @@
                 {{ url.loc }}
             {% endif %}
 
-            {% if url.image is defined and url.image is not empty %}
-                <image:image>
-                    <image:loc>
-                        {% if url.image.loc|replace({hostname:''}) == url.image.loc %}
-                            {{ hostname }}{{ url.image.loc }}
-                        {% else %}
-                            {{ url.image.loc }}
-                        {% endif %}
-                    </image:loc>
-                    <image:title>{{ url.image.title }}</image:title>
-                </image:image>
-            {% endif %}
         </loc>
     </url>
 {% endfor %}

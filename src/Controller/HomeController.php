@@ -111,6 +111,14 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @Route("/robots.txt", name="app_robot")
+     */
+    public function robot()
+    {
+        return $this->render('home/robots.html.twig');
+    }
+
+    /**
      * @Route("/maintenance/", name="app_maintenance", methods={"GET","POST"})
      */
     public function maintenance(Request $request)
