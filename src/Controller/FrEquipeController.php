@@ -19,7 +19,7 @@ class FrEquipeController extends AbstractController
     public function index(): Response
     {
         return $this->render('frontend/equipes.html.twig',[
-            'equipes' => $this->getDoctrine()->getRepository(Equipe::class)->findAll(),
+            'equipes' => $this->getDoctrine()->getRepository(Equipe::class)->findBy([],['ordre'=>"ASC"]),
             'menu' => 'presentation'
         ]);
     }
@@ -30,7 +30,9 @@ class FrEquipeController extends AbstractController
     public function show(Equipe $equipe): Response
     {
         return $this->render('frontend/equipe_show.html.twig',[
-            'equipe' => $equipe
+            'equipe' => $equipe,
+            'equipes' => $this->getDoctrine()->getRepository(Equipe::class)->findOthers($equipe->getId()),
+            'menu' => 'presentation'
         ]);
     }
 }

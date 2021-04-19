@@ -43,8 +43,8 @@
                                     <li class="menu-item menu-item-home current-menu-item page_item page-item-2039 current_page_item"><a href="{{ absolute_url(path("app_home")) }}">Accueil</a></li>
                                     <li class="menu-item menu-item-has-children"><a href="#">Qui sommes-nous?</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item"><a href="{{ path('frontend_presentation') }}">Présentation</a></li>
-                                            <li class="menu-item"><a href="#">Notre équipe</a></li>
+                                            <li class="menu-item"><a href="{{ absolute_url(path('frontend_presentation')) }}">Présentation</a></li>
+                                            <li class="menu-item"><a href="{{ absolute_url(path('frontend_equipe_index')) }}">Notre équipe</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item menu-item-has-children"><a href="#">Nos metiers</a>
@@ -150,9 +150,9 @@
                                     <div class="menu-useful-links-container">
                                         <ul id="menu-useful-links" class="menu">
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5507"><a href="{{ path('frontend_presentation') }}">Présentation</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5506"><a href="#">Notre équipe</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5512"><a href="#">Nos metiers</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5508"><a href="#">Nos ambitions</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5506"><a href="{{ path('frontend_equipe_index') }}">Notre équipe</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5512"><a href="{{ path('frontend_domaine_index') }}">Nos metiers</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5508"><a href="">Nos ambitions</a></li>
                                         </ul>
                                     </div>
                                 </div>

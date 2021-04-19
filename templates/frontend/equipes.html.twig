@@ -27,8 +27,8 @@
                                 </span>
                                 &raquo;
                                 <span property="itemListElement" typeof="ListItem">
-                                    <a property="item" typeof="WebPage" title="Qui sommes nous?" href="#" class="post post-page">
-                                        <span property="name">Notre équipe</span>
+                                    <a property="item" typeof="WebPage" title="Qui sommes nous?" href="{{ absolute_url(path('frontend_presentation')) }}" class="post post-page">
+                                        <span property="name">Qui sommes-nous?</span>
                                     </a>
                                         <meta property="position" content="2">
                                 </span>
@@ -67,30 +67,30 @@
                                     </div>
                                 </div>
                                 <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-personnel-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-personnel-item-style-grid gdlr-core-personnel-style-grid gdlr-core-with-divider ">
+                                    <div class="gdlr-core-personnel-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-personnel-item-style-grid-with-background gdlr-core-personnel-style-grid gdlr-core-with-background" style="padding-bottom: 25px;"">
                                     {% for equipe in equipes %}
                                         <div class="gdlr-core-personnel-list-column  gdlr-core-column-20 {% if loop.first %} gdlr-core-column-first {% endif%} gdlr-core-item-pdlr">
-                                            <div class="gdlr-core-personnel-list clearfix">
+                                            <div class="gdlr-core-personnel-list clearfix" style="box-shadow: 0px 0px 74px rgba(28, 28, 28,0.07); -moz-box-shadow: 0px 0px 74px rgba(28, 28, 28,0.07); -webkit-box-shadow: 0px 0px 74px rgba(28, 28, 28,0.07); ">
                                                 <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                    <a href="#"><img src="{{ absolute_url(asset('uploads/equipe/'~ equipe.media)) }}" alt="{{ equipe.nom }}" width="600" height="465"></a>
+                                                    <a href="{{ absolute_url(path('frontend_equipe_show', {'slug': equipe.slug})) }}"><img src="{{ absolute_url(asset('uploads/equipe/'~ equipe.media)) }}" alt="{{ equipe.nom }}" width="350" height="350"></a>
                                                 </div>
-                                                <div class="gdlr-core-personnel-list-content-wrap">
-                                                    <h3 class="gdlr-core-personnel-list-title" style="font-weight: 600;"><a href="#">{{ equipe.nom }}</a></h3>
+                                                <div class="gdlr-core-personnel-list-content-wrap" style="padding-top: 35px;">
+                                                    <h3 class="gdlr-core-personnel-list-title" style="font-weight: 600;"><a href="{{ absolute_url(path('frontend_equipe_show', {'slug': equipe.slug})) }}">{{ equipe.nom }}</a></h3>
                                                     <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 15px;font-style: normal;">{{ equipe.fonction }}</div>
                                                     <div class="gdlr-core-personnel-list-divider gdlr-core-skin-divider"></div>
-                                                    <div class="gdlr-core-personnel-list-content">
+                                                    <!--<div class="gdlr-core-personnel-list-content">
                                                         <p><a href="mailto:{{ equipe.email }}">{{ equipe.email }}</a></p>
-                                                    </div>
+                                                    </div>-->
                                                     <div class="gdlr-core-personnel-list-social">
                                                         <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px;">
                                                         {% if equipe.linkedin %}
-                                                            <a href="{{ equipe.linkedin }}" target="_blank" class="gdlr-core-social-network-icon" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                                                            <a href="https://linkedin.com/in/{{ equipe.linkedin }}" target="_blank" class="gdlr-core-social-network-icon" title="Linkedin"><i class="fa fa-linkedin"></i></a>
                                                         {% endif %}
                                                         {% if equipe.facebook %}
-                                                            <a href="{{  equipe.facebook }}" target="_blank" class="gdlr-core-social-network-icon" title="facebook"><i class="fa fa-facebook"></i></a>
+                                                            <a href="https://facebook.com/{{  equipe.facebook }}" target="_blank" class="gdlr-core-social-network-icon" title="facebook"><i class="fa fa-facebook"></i></a>
                                                         {% endif %}
                                                         {% if equipe.twitter %}
-                                                            <a href="{{ equipe.twitter }}" target="_blank" class="gdlr-core-social-network-icon" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                                            <a href="https://twitter.com/{{ equipe.twitter }}" target="_blank" class="gdlr-core-social-network-icon" title="Twitter"><i class="fa fa-twitter"></i></a>
                                                         {% endif %}
                                                         </div>
                                                     </div>

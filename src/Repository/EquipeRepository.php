@@ -19,6 +19,16 @@ class EquipeRepository extends ServiceEntityRepository
         parent::__construct($registry, Equipe::class);
     }
 
+    public function findOthers($id)
+    {
+        return $this->createQueryBuilder('e')
+            ->where('e.id <> :id')
+            ->orderBy('e.ordre', 'ASC')
+            ->setParameter('id', $id)
+            ->getQuery()->getResult()
+            ;
+    }
+
     // /**
     //  * @return Equipe[] Returns an array of Equipe objects
     //  */

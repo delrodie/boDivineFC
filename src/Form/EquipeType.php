@@ -6,6 +6,7 @@ use App\Entity\Equipe;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -27,7 +28,8 @@ class EquipeType extends AbstractType
             ])
             ->add('email', EmailType::class,[
                 'attr'=>['class'=>"form-control", 'autocomplete'=>"off"],
-                'label' => "Adresse email"
+                'label' => "Adresse email",
+                'required' => false
             ])
             ->add('biographie', TextareaType::class,[
                 'attr'=>['class'=>"form-control", 'rows'=>"7"],
@@ -66,6 +68,11 @@ class EquipeType extends AbstractType
             ->add('linkedin', TextType::class,[
                 'attr'=>['class'=>"form-control", 'autocomplete'=>"off"],
                 'label' => "Compte LinkedIn",
+                'required' => false
+            ])
+            ->add('ordre', IntegerType::class,[
+                'attr'=>['class' => "form-control", 'autocomplete'=>"off"],
+                'label' => "Ordre d'affichage (Nombre entier)",
                 'required' => false
             ])
         ;

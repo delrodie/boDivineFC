@@ -48,6 +48,13 @@ class EquipeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
 
+            // Vérification de non attribution du numéro d'ordre
+            $verifOrdre = $this->getDoctrine()->getRepository(Equipe::class)->findOneBy(['ordre'=>$equipe->getOrdre()]);
+            if ($verifOrdre){
+                $this->addFlash('danger', "Échec, ce numero d'ordre a déjà été attribué. Merci de le modifier");
+                return $this->redirectToRoute('backend_equipe_new');
+            }
+
             $slugify = new Slugify();
             $slug = $slugify->slugify($equipe->getNom()).'-'.$slugify->slugify($equipe->getFonction());
 
