@@ -1,0 +1,20 @@
+{% extends 'security_layout.html.twig' %}
+
+{% block title %}{{ parent() }} Mot de passe{% endblock %}
+
+{% block body %}
+    <div class="signin-sidebar">
+        <div class="signin-sidebar-body">
+            <a href="{{ path('app_home') }}" class="sidebar-logo mg-b-40"><span>DIVINE FINANCES & CONSEILS</span></a>
+
+            {{ form_start(resetForm) }}
+            <h5 class="signin-subtitle mb-3">Modifier votre mot de passe</h5>
+            {{ form_rest(resetForm) }}
+            <div class="form-group d-flex mg-b-5 mt-3">
+                <button type="submit" class="btn btn-brand-01 btn-uppercase flex-fill">{% trans %}Modifier{% endtrans %}</button>
+            </div>
+            {{ form_end(resetForm) }}
+            <div class="mt-5"><a href="javascript:history.back()">Annuler</a></div>
+        </div>
+    </div>
+{% endblock %}

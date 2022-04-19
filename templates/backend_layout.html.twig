@@ -110,10 +110,8 @@
                                 </div><!-- media -->
                             </div>
                             <div class="dropdown-menu-body">
-                                <a href="#" class="dropdown-item"><i data-feather="user"></i> Activités</a>
-                                <a href="#" class="dropdown-item"><i data-feather="edit-2"></i> Compte</a>
-                                <a href="#" class="dropdown-item"><i data-feather="briefcase"></i> Mot de passe</a>
-                                <a href="#" class="dropdown-item"><i data-feather="log-out"></i> Déconnexion</a>
+                                <a href="{{ path('admin_change_password') }}" class="dropdown-item"><i data-feather="briefcase"></i> Mot de passe</a>
+                                <a href="{{ path('app_logout') }}" class="dropdown-item"><i data-feather="log-out"></i> Déconnexion</a>
                             </div>
                         </div><!-- dropdown-menu -->
                     </div>
